@@ -9,5 +9,3 @@ Scenario: Add a movie
 	And I press "Save Changes"
 	Then I should be on the RottenPotatoes home page
 	And I should see "Men in Black"
-
-

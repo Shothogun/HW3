@@ -45,6 +45,20 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given /^the following movies exist:$/ do |table|
+	# table.raw gives a list of the three collumns from
+	# each row
+	table.raw.each do |row|
+		title = row[0]
+		rating = row[1]
+		release_date = row[2] 
+		Movie.create(:title => title, :rating => rating, :release_date => release_date)
+	end 
+end
+
+And /^I check all ratings/ do
+end
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -76,21 +90,6 @@ end
 # TODO: Add support for checkbox, select or option
 # based on naming conventions.
 #
-
-Given /^the following movies exist:$/ do |table|
-	# table.raw gives a list of the three collumns from
-	# each row
-	table.raw.each do |row|
-		title = row[0]
-		rating = row[1]
-		release_date = row[2] 
-		Movie.create(:title => title, :rating => rating, :release_date => release_date)
-	end 
-end
-
-And /^I check all ratings/ do
-end
-
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
     When %{I fill in "#{name}" with "#{value}"}
