@@ -8,19 +8,27 @@ Para resolver essa questão fiz os seguintes passos:
 
 1. Antes de executar qualquer comando no projeto, acessei o ```Gemfile``` e modifiquei a versãol do Rails para 5.0.1. Ou seja, mudei a linha:
 
-``` gem 'rails', '~> 5.0.0', '>= 5.0.0.1' ```
+``` 
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+```
 
 Para :
 
-``` gem 'rails', '~> 5.0.1' ```
+```
+gem 'rails', '~> 5.0.1'
+```
 
 2. E atualizei a versão do Sqlite3. Ou seja, mudei a linha:
 
-``` gem 'sqlite3' ```
+```
+gem 'sqlite3'
+```
 
 Para :
 
-``` gem "sqlite3", "~> 1.3.6" ```
+```
+gem "sqlite3", "~> 1.3.6"
+```
 
 3. Em seguida, executei o ``` bundle update ```
 
